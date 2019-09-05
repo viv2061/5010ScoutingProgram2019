@@ -8,13 +8,134 @@
 
         </nav>
     </header>
-    <body onload = "start">
-        <input type = "text" placeholder = "Search for team">
-        <h1>Teams</h1>
-        <ul>
-        </ul>
-        <button onclick = "addTeam()">Add team</button>
-        <a href = "" id = "downloadLink">Download Team File</a>
+    <body onload = "start()">
+        <div class = "section" id = "leftSection">
+            <h1>Scouting Program</h1>
+            <div class = "menuButtonsDiv">
+                <button onclick = "createTeamList()">New Team List</button>
+                <button onclick = "addNewTeam()">Add New Team</button>
+                <button onclick = "document.getElementById('openTeamList').click()">Open Team List</button>
+                <input type = "file" id = "openTeamList">
+                <button onclick = "saveTeamList()">Save</button>
+                <button onclick = "viewTeamListSummary()">Team List Summary</button>
+            </div>
+            <h3 id = "teamListTitle">Team List:</h3>
+            <ul id = "teamList">
+            </ul>
+        </div>
+        <div class = "section" id = "rightSection">
+            <h1 id = "teamNumberTitle">Team Number</h1>
+            <div class="menuButtonsDiv">
+                <button onclick = "viewSummary()">View Summary</button>
+                <button onclick = "createEntry()">Create Entry</button>
+            </div>
+            <div id = "createdEntry" class = "entry">
+                <h3 class = "matchTitle createdEntryProperty">Match Title:<input type = "text" size = "20" class = "createdEntryInput"></h3>
+                <table>
+                    <tr>
+                        <td class = "createdEntryProperty">SS Lvl 1 Cargo:</td>
+                        <td><input type = "text" size = "1" class = "createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">SS Lvl 2 Cargo:</td>
+                        <td><input type = "text" size = "1" class = "createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">SS Lvl 3 Cargo:</td>
+                        <td><input type = "text" size = "1" class = "createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">SS Lvl 1 Hatch:</td>
+                        <td><input type = "text" size = "1" class = "createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">SS Lvl 2 Hatch:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">SS Lvl 3 Hatch:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">SS Cargo Ship Cargo:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">SS Cargo Ship Hatch:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">GP Lvl 1 Cargo:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">GP Lvl 2 Cargo:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">GP Lvl 3 Cargo:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">GP Lvl 1 Hatch:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">GP Lvl 2 Hatch:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">GP Lvl 3 Hatch:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">GP Cargo Ship Cargo:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">GP Cargo Ship Hatch:</td>
+                        <td><input type="text" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">Can climb:</td>
+                        <td><input type="checkbox" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">Climb to lvl2:</td>
+                        <td><input type="checkbox" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">Climb to lvl3:</td>
+                        <td><input type="checkbox" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class="createdEntryProperty">Played Defense?</td>
+                        <td><input type="checkbox" size="1" class="createdEntryInput"></td>
+                    </tr>
+                    <tr>
+                        <td class = "createdEntryProperty">Additional comments:</td>
+                        <td><input type="text" size="50" class="createdEntryInput"></td>
+                    </tr>
+                </table>
+                <button onclick = "saveEntry()">Add Entry</button>
+                <button onclick = "hideCreateEntry()">Cancel</button>
+            </div>
+            <div id = "content">
+            </div>
+            <div id = "summary" class = "entry">
+                <h3>Summary</h3>
+                <table id = "summaryTable">
+                </table>
+                <h3>Comments</h3>
+                <ul id = "summaryComments">
+                    <li></li>
+                </ul>
+            </div>
+            <div id = "teamListSummary" class = "entry">
+                <table id = "teamListSummaryTable">
+                </table>
+            </div>
+        </div>
     </body>
     <script src = "main.js"></script>
 </html>

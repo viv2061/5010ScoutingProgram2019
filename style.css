@@ -4,5 +4,79 @@
 
 body {
     margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+h1 {
+    margin: 0;
+}
+
+.section {
+    margin: 0;
     padding: 2em;
+    border-left: 1px solid grey;
+    overflow: auto;
+}
+
+#leftSection {
+    width: 40%;
+}
+
+#rightSection {
+    width: 60%;
+}
+
+button {
+    margin: 0 0.5em;
+}
+
+.menuButtonsDiv {
+    padding: 1.5em 0;
+}
+
+#openTeamList {
+    display: none;
+}
+
+#teamList li {
+    padding: 5px 0px;
+}
+
+a:hover {
+    color: orange;
+}
+
+.entry {
+    padding: 1em;
+    border: 1px solid grey;
+    color: darkgrey;
+    width: 70%;
+}
+
+.entry .matchTitle {
+    margin: 0;
+    color: black;
+}
+
+.entry table {
+    padding: 10px;
+}
+
+.entry td {
+    padding: 3px 15px;
+}
+
+.entry p {
+    margin: 0;
+    padding: 2px 0;
+}
+
+#createdEntry {
+    border: 2px solid orange;
+    display: none;
+}
+
+#summary {
+    display: none;
 }
